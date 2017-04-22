@@ -2,26 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     
-    
-    
-    
-    
-    
-    
-    
-    
   <url>
-    <loc>http://huangmxsysu.github.io/2017/04/10/hello-world/</loc>
-    <lastmod>2017-04-10T12:46:48.000Z</lastmod>
+    <loc>http://huangmxsysu.github.io/2017/04/22/%E6%88%91%E5%AF%B9hyperledger-fabric-1-0-%E6%9E%B6%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/</loc>
+    <lastmod>2017-04-22T08:16:23.000Z</lastmod>
     <data>
         <display>
-        <title>Hello World</title>
-        <pubTime>2017-04-10T12:46:48.000Z</pubTime>
+        <title>我对hyperledger fabric 1.0 架构的理解</title>
+        <pubTime>2017-04-22T03:04:34.000Z</pubTime>
         
+        <tag>区块链 </tag>
+         
+        <tag>hyperledger </tag>
+         
+        <tag>fabric </tag>
+         
          
            
         </display>
     </data>
     </url>
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
 </urlset>
