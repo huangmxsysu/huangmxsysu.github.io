@@ -394,36 +394,22 @@
       
         
           
-            <p>######参考资料来源</p>
-<ul>
-<li><a href="https://github.com/hyperledger/fabric" target="_blank" rel="external">源码</a></li>
+            <h4 id="参考资料来源"><a href="#参考资料来源" class="headerlink" title="参考资料来源"></a>参考资料来源</h4><ul>
+<li><a href="https://github.com/hyperledger/fabric" target="_blank" rel="external">源码</a><br><hr><br>在fabric源码中实现 fabric 功能的核心代码，包括：</li>
 </ul>
-<pre><code>在fabric源码中实现 fabric 功能的核心代码，包括：
-
-•    `accesscontrol` 包：实现对 chaincode 的权限管理和属性校验等；
-
-•    `common` 包：一些通用的模块；
-
-•    `core` 包：大部分核心实现代码都在本包下。其它包的代码封装上层接口，最终调用本包内代码；
-
-•    `events` 包：支持 event 框架；
-
-•    `examples` 包：包括一些示例的 chaincode 代码；
-
-•    `flogging` 包：封装 go-logging，提供日志支持；
-
-•    `gossip` 包：实现 gossip 协议；
-
-•    `metadata` 包：版本信息等；
-
-•    `msp `包：Member Service Provider 包；
-
-•    `order` 包：order 服务相关的入口和框架代码；
-
-•    `peer` 包：peer 的入口和框架代码；
-
-•    `protos` 包：包括各种协议和消息的 protobuf 定义文件；
-</code></pre><hr>
+<p>•    <code>accesscontrol</code> 包：实现对 chaincode 的权限管理和属性校验等；</p>
+<p>•    <code>common</code> 包：一些通用的模块；</p>
+<p>•    <code>core</code> 包：大部分核心实现代码都在本包下。其它包的代码封装上层接口，最终调用本包内代码；</p>
+<p>•    <code>events</code> 包：支持 event 框架；</p>
+<p>•    <code>examples</code> 包：包括一些示例的 chaincode 代码；</p>
+<p>•    <code>flogging</code> 包：封装 go-logging，提供日志支持；</p>
+<p>•    <code>gossip</code> 包：实现 gossip 协议；</p>
+<p>•    <code>metadata</code> 包：版本信息等；</p>
+<p>•    <code>msp</code>包：Member Service Provider 包；</p>
+<p>•    <code>order</code> 包：order 服务相关的入口和框架代码；</p>
+<p>•    <code>peer</code> 包：peer 的入口和框架代码；</p>
+<p>•    <code>protos</code> 包：包括各种协议和消息的 protobuf 定义文件；</p>
+<hr>
 
 <ul>
 <li><p><a href="http://hyperledger-fabric.readthedocs.io/en/latest/FAQ/architecture_FAQ.html" target="_blank" rel="external">fabric1.0官方文档</a></p>
@@ -459,40 +445,41 @@
 <li><p><a href="https://www.ibm.com/developerworks/cn/cloud/library/cl-blockchain-basics-intro-bluemix-trs/" target="_blank" rel="external">区块链技术基础：分布式账本简介</a></p>
 </li>
 </ul>
-<h3 id="fabric-架构图"><a href="#fabric-架构图" class="headerlink" title="fabric 架构图"></a><div align="center">fabric 架构图</div></h3><p><br></p>
-<p>&emsp;&emsp;hyperledger技术建立在原有区块链技术上，同时扩展了成员管理以及链码技术，构成了fabric的三大架构体系：Membership Services, Blockchain Services, Chaincode Services,如图所示是fabric0.6中的架构图：</p>
+<h3 id="fabric-架构图"><a href="#fabric-架构图" class="headerlink" title="fabric 架构图"></a><div align="center">fabric 架构图</div></h3><p>&emsp;&emsp;hyperledger技术建立在原有区块链技术上，同时扩展了成员管理以及链码技术，构成了fabric的三大架构体系：Membership Services, Blockchain Services, Chaincode Services,如图所示是fabric0.6中的架构图：</p>
 <div align="center"><br><img src="/2017/04/22/我对hyperledger-fabric-1-0-架构的理解/jiagou.png" width="80%"><br></div>
 
 
-<p><br></p>
+<p><br><br><br></p>
 <h3 id="Membership-Services（成员管理服务）"><a href="#Membership-Services（成员管理服务）" class="headerlink" title="Membership Services（成员管理服务）"></a><div align="center">Membership Services（成员管理服务）</div></h3><p>&emsp;&emsp;成员管理服务用来管理节点身份、隐私、confidentiality 和 auditability。在一个 non-permissioned的区块链网络里，参与者不要求授权，所有的节点被视作一样，都可以去submit一个transaction，去把这些交易存到区块（blocks）中。那Membership Service是要将一个 non-permissioned的区块链网络变成一个permissioned的区块链网络，凭借着Public Key Infrastructure (PKI)、去中心和一致性。    </p>
 <p>&emsp;&emsp;Hyperledger是一个私人认证网络协议，因此所有个体都需要注册会员服务来获取身份，从而进行网络访问及交易。在网络设置过程中，验证器可以鉴定交易所需权限级别。网络设置过程也会设置权限，实现轻松访问、高速高效应用、或严格控制网络环境。</p>
 <p>概括地解释：</p>
 <ol>
 <li>注册机制</li>
 </ol>
-<pre><code>注册机制能够控制并管理Hyperledger参与者的权限。
-</code></pre><ol>
+<p>注册机制能够控制并管理Hyperledger参与者的权限。</p>
+<ol>
 <li>身份管理</li>
 </ol>
-<pre><code>身份管理能够提供管理保障，根据Hyperledger参与者的身份与角色来授予信息披露权限。
-</code></pre><ol>
+<p>身份管理能够提供管理保障，根据Hyperledger参与者的身份与角色来授予信息披露权限。</p>
+<ol>
 <li>可审核性    </li>
 </ol>
-<pre><code>可审核性能够帮助授权个体将个人或团体之间的交易连接起来，并且访问系统中某一用户的活动情况，或其本身的运行情况。
-</code></pre><p>&emsp;&emsp;具体地，上面我们提到membership services成员服务，旨在通过身份管理协调交易隐私以及提供可审计的服务</p>
+<p>可审核性能够帮助授权个体将个人或团体之间的交易连接起来，并且访问系统中某一用户的活动情况，或其本身的运行情况。</p>
+<p>&emsp;&emsp;具体地，上面我们提到membership services成员服务，旨在通过身份管理协调交易隐私以及提供可审计的服务</p>
 <ul>
 <li>为交易添加证书来实现“有权限的”区块链</li>
 </ul>
 <ul>
 <li><p>使用两层系统：</p>
 <ul>
-<li>向登记的证颁发机构（CA）注册来获得(相对的) 静态登记证书 (ECerts)</li>
+<li><p>向登记的证颁发机构（CA）注册来获得(相对的) 静态登记证书 (ECerts)</p>
+</li>
+<li><p>通过交易CA获取能如实但伪匿名的代表登记用户的交易证书(TCerts).</p>
+</li>
 </ul>
 </li>
 </ul>
-<pre><code>* 通过交易CA获取能如实但伪匿名的代表登记用户的交易证书(TCerts).
-</code></pre><ul>
+<ul>
 <li>提供对系统中未授权会员隐藏交易内用的机制</li>
 </ul>
 <h4 id="fabric成员管理详细过程"><a href="#fabric成员管理详细过程" class="headerlink" title="fabric成员管理详细过程"></a><div align="center">fabric成员管理详细过程</div></h4><h6 id="fabric涉及到的PKI术语解释"><a href="#fabric涉及到的PKI术语解释" class="headerlink" title="fabric涉及到的PKI术语解释"></a>fabric涉及到的PKI术语解释</h6><p><br></p>
@@ -550,28 +537,24 @@
 <p>  客户端: 请求TCert批量需要包含（另外计数），ECert和使用ECert私钥签名的请求（其中ECert的私钥使用本地存储获取的）, TCA为批量生成TCerts: 生成密钥派生函数的密钥，<code>KeyDF_Key</code>, 当作<code>HMAC(TCA_KDF_Key, EnrollPub_Key)</code>. 为每张TCert生成公钥(使用<code>TCertPub_Key = EnrollPub_Key + ExpansionValue</code>, 其中384位的<code>ExpansionValue = HMAC(Expansion_Key, TCertIndex)</code> 和384位的<code>Expansion_Key = HMAC(KeyDF_Key, “2”)</code>. 生成每个<code>AES_EncryptTCertOwner_EncryptKey(TCertIndex || 已知的填充/校验检查向量)</code>， 其中|| 表示连接，且<code>TCertOwner_EncryptKey</code>被当作<code>[HMAC(KeyDF_Key, “1”)]</code>派生256位截断.</p>
 </li>
 <li><p>调用查询阶段：</p>
+<p>  客户端: 为调用和查询，根据TCert来生成TCert的私钥：<code>KeyDF_Key</code>和<code>ECert的私钥</code>需要从本地存储中获取。<code>KeyDF_Key</code>是用来派生被当作<code>[HMAC(KeyDF_Key, “1”)]</code>256位截断的<code>TCertOwner_EncryptKey</code>；<code>TCertOwner_EncryptKey</code>是用来对TCert中的 <code>AES_EncryptTCertOwner_EncryptKey(TCertIndex || 已知的填充/校验检查向量)</code>域解密的；<code>TCertIndex</code>是用来派生TCert的私钥的： <code>TCertPriv_Key = (EnrollPriv_Key + ExpansionValue)</code>模n，其中384位的<code>ExpansionValue = HMAC(Expansion_Key, TCertIndex)</code>，384位的<code>Expansion_Key = HMAC(KeyDF_Key, “2”)</code>。</p>
 </li>
 </ul>
-<pre><code>客户端: 为调用和查询，根据TCert来生成TCert的私钥：`KeyDF_Key`和`ECert的私钥`需要从本地存储中获取。`KeyDF_Key`是用来派生被当作`[HMAC(KeyDF_Key, “1”)]`256位截断的`TCertOwner_EncryptKey`；`TCertOwner_EncryptKey`是用来对TCert中的 `AES_EncryptTCertOwner_EncryptKey(TCertIndex || 已知的填充/校验检查向量)`域解密的；`TCertIndex`是用来派生TCert的私钥的： `TCertPriv_Key = (EnrollPriv_Key + ExpansionValue)`模n，其中384位的`ExpansionValue = HMAC(Expansion_Key, TCertIndex)`，384位的`Expansion_Key = HMAC(KeyDF_Key, “2”)`。
-</code></pre><p><br></p>
+<p><br></p>
 <h3 id="Chaincode-Services（链码服务）"><a href="#Chaincode-Services（链码服务）" class="headerlink" title="Chaincode Services（链码服务）"></a><div align="center">Chaincode Services（链码服务）</div></h3><p><br></p>
-<pre><code>Chaincode services 会提供一种安全且轻量级的沙盒运行模式，来在VP节点上执行chaincode逻辑。这里使用Container环境，里面的base镜像都是经过签名验证的安全镜像，包括OS层和开发chaincode的语言、runtime和SDK层，目前支持Go、Jave和Nodejs开发语言。chaincode是一段应用级的代码，交易逻辑就在里面，fabric是用Docker容器来运行chaincode的。一旦chaincode容器被启动，它就会通过gRPC与启动这个chaincode的VP(Validating Peer)节点连接。
-</code></pre><ul>
+<p>&emsp;&emsp;Chaincode services 会提供一种安全且轻量级的沙盒运行模式，来在VP节点上执行chaincode逻辑。这里使用Container环境，里面的base镜像都是经过签名验证的安全镜像，包括OS层和开发chaincode的语言、runtime和SDK层，目前支持Go、Jave和Nodejs开发语言。chaincode是一段应用级的代码，交易逻辑就在里面，fabric是用Docker容器来运行chaincode的。一旦chaincode容器被启动，它就会通过gRPC与启动这个chaincode的VP(Validating Peer)节点连接。</p>
+<ul>
 <li>安全容器</li>
 </ul>
-<pre><code>&amp;emsp;&amp;emsp;链上代码服务使用**Docker**来存放链上代码( `build` , `start` , `stop` )，启动容器通过grpc传输协议与节点间进行通信。Docker为沙盒链上代码的执行提供了一个安全、轻便的方法。其环境是一个封锁又安全的容器，还有一套签署过的图片库，包括安全的操作系统及链上代码语言，以及*Golang*的SDK组图与执行环境。如果有需要的话，也能添加其他程序语言。
-</code></pre><ul>
+<p>&emsp;&emsp;链上代码服务使用<strong>Docker</strong>来存放链上代码( <code>build</code> , <code>start</code> , <code>stop</code> )，启动容器通过grpc传输协议与节点间进行通信。Docker为沙盒链上代码的执行提供了一个安全、轻便的方法。其环境是一个封锁又安全的容器，还有一套签署过的图片库，包括安全的操作系统及链上代码语言，以及<em>Golang</em>的SDK组图与执行环境。如果有需要的话，也能添加其他程序语言。</p>
+<ul>
 <li>链上代码交易</li>
 </ul>
-<pre><code>&amp;emsp;&amp;emsp;链上代码交易是有时间限定的，并且在链上代码装置过程中是按特定形式装配的，这和数据库调用或网站服务调用类似。如果超过交易时限，那么就按出错处理，不会给账本状态带去任何改变。如果调用的函数有相同保密范围限制的话，一个链上代码函数就能够调用另一个链上代码函数--也就是说，如果两个机密链上代码之间，有相同的一组验证器，那么它们之间就能互相调用。
-
-
-&amp;emsp;&amp;emsp;新区块进行交易时，会维持区块链上最后区块的整体状态差量。如果当前区块达到共识，那么变量就会提交到数据库，之后整体状态的区块数量就会增加1个。如果节点没有达到共识，那么差量就不会算入，数据库也不会进行修改。
-</code></pre><p>构成链码代码交易的核心技术就是chaincode。对于一个区块链系统来说，区块链是由一个一个的区块串接而成，每个区块又是由若干的Transaction构成。所以，可以说Transaction是一个区块链系统中最基本的组成要素。而在Fabric中，Chaincode的运行是生成Transaction的唯一来源，也因此Chaincode是外界与Fabric区块链交互的唯一渠道。由此可见chaincode的重要性。</p>
-<pre><code>&amp;emsp;&amp;emsp;在fabric0.6版本中，chaincode需要实现三个函数，`Init`，`Invoke` 和 `Query`。Init是构造函数，它只在部署交易时被执行，Query函数用来读取状态。Invoke来进行交易的发生。chaincode容器被部署时，会向对应的peer进行注册，注册之后，VP节点就会通知chaincode容器调用Init函数。其实peer跟chaincode容器之间是隔着一个shim层的，chaincode容器的shim层会接收来自peer的信息，根据信息调用chaincode相应的函数，如Invoke。
-
-**注：fabric1.0中把Query()函数整合到了Invoke()，所以新版本的函数只有两个，即Init(),Invoke()**
-</code></pre><p><br><br>   下面，我根据官方github上的说明文档以及自己的理解解释下shim层的工作流程(shim层其实就是容器上的一个功能层)</p>
+<p>&emsp;&emsp;链上代码交易是有时间限定的，并且在链上代码装置过程中是按特定形式装配的，这和数据库调用或网站服务调用类似。如果超过交易时限，那么就按出错处理，不会给账本状态带去任何改变。如果调用的函数有相同保密范围限制的话，一个链上代码函数就能够调用另一个链上代码函数–也就是说，如果两个机密链上代码之间，有相同的一组验证器，那么它们之间就能互相调用。</p>
+<p>&emsp;&emsp;新区块进行交易时，会维持区块链上最后区块的整体状态差量。如果当前区块达到共识，那么变量就会提交到数据库，之后整体状态的区块数量就会增加1个。如果节点没有达到共识，那么差量就不会算入，数据库也不会进行修改。<br>构成链码代码交易的核心技术就是chaincode。对于一个区块链系统来说，区块链是由一个一个的区块串接而成，每个区块又是由若干的Transaction构成。所以，可以说Transaction是一个区块链系统中最基本的组成要素。而在Fabric中，Chaincode的运行是生成Transaction的唯一来源，也因此Chaincode是外界与Fabric区块链交互的唯一渠道。由此可见chaincode的重要性。</p>
+<p>&emsp;&emsp;在fabric0.6版本中，chaincode需要实现三个函数，<code>Init</code>，<code>Invoke</code> 和 <code>Query</code>。Init是构造函数，它只在部署交易时被执行，Query函数用来读取状态。Invoke来进行交易的发生。chaincode容器被部署时，会向对应的peer进行注册，注册之后，VP节点就会通知chaincode容器调用Init函数。其实peer跟chaincode容器之间是隔着一个shim层的，chaincode容器的shim层会接收来自peer的信息，根据信息调用chaincode相应的函数，如Invoke。</p>
+<p><strong>注：fabric1.0中把Query()函数整合到了Invoke()，所以新版本的函数只有两个，即Init(),Invoke()</strong></p>
+<p><br><br>   下面，我根据官方github上的说明文档以及自己的理解解释下shim层的工作流程(shim层其实就是容器上的一个功能层)</p>
 <p>   <br></p>
 <div align="center"><br><img src="/2017/04/22/我对hyperledger-fabric-1-0-架构的理解/chaincode.png" width="60%"><br></div>   
 
@@ -579,24 +562,29 @@
 <p><br></p>
 <h3 id="Blockchain-Services（区块链服务）"><a href="#Blockchain-Services（区块链服务）" class="headerlink" title="Blockchain Services（区块链服务）"></a><div align="center">Blockchain Services（区块链服务）</div></h3><p><br></p>
 <p>&emsp;&emsp;Blockchain services使用建立在HTTP/2上的P2P协议来管理分布式账本。提供最有效的哈希算法来维护world state的副本。采取可插拔的方式来根据具体需求来设置共识协议，比如PBFT，Raft，PoW和PoS等等。</p>
-<pre><code>区块链服务由三个关键部分组成：分布式账本及存储，点对点（P2P）协议以及共识管理器。
-</code></pre><p>概括地解释：</p>
-<ol>
-<li>P2P协议</li>
-</ol>
-<pre><code>P2P协议提供了很多功能，包括双向流，流量控制和多路复用。它构建于现有的互联网基础设施之上比如：防火墙、代理等，定义了节点和节点之间通讯的规则
-</code></pre><ol>
-<li>分布式账本及存储</li>
-</ol>
-<pre><code>分布式账本管理区块链网络（可能是世界范围的）的交易的处理及验证工作，负责维护和更新区块链网络内所有对象的状态
-</code></pre><p>一些基本的、非功能方面包括：<br>    a. 高效的计算cryptographic hash<br>    b. 有效的计算差异，如果有节点数据没有更新，传输给它尽可能少的数据<br>    c. 保证每一次交易产生较少的数据（存储）</p>
-<pre><code>&lt;br&gt;
-分布式账本底层使用RocksDB，大文件的hash存储在链上，文件本身在链外存储
-</code></pre><ol>
-<li>共识机制管理</li>
-</ol>
-<pre><code>共识机制管理为共识算法和其他组件之间定义了通用的接口，它接收交易，然后剩下的事情交给共识算法去做。共识机制管理使得共识算法模块化，可配置化。
-</code></pre><h6 id="点对点（P2P）协议"><a href="#点对点（P2P）协议" class="headerlink" title="点对点（P2P）协议"></a>点对点（P2P）协议</h6><p>&emsp;&emsp;点对点协议运用的是Google RPC协议（谷歌远程过程调用协议，在超文本传输协议2.0标准下执行），其功能包括双向流、流控制、在单一连接下执行多路复用要求等。最重要的是，它能与现有网络基础设施结合，包括防火墙、代理服务器以及安全保护等。这一组合能够为对等节点采用的信息提供由点对点到多路传送的定义。</p>
+<p><em>区块链服务由三个关键部分组成：分布式账本及存储，点对点（P2P）协议以及共识管理器。</em></p>
+<p>概括地解释：</p>
+<ul>
+<li>(1) P2P协议</li>
+</ul>
+<p>P2P协议提供了很多功能，包括双向流，流量控制和多路复用。它构建于现有的互联网基础设施之上比如：防火墙、代理等，定义了节点和节点之间通讯的规则</p>
+<ul>
+<li>(2) 分布式账本及存储</li>
+</ul>
+<p>分布式账本管理区块链网络（可能是世界范围的）的交易的处理及验证工作，负责维护和更新区块链网络内所有对象的状态<br>一些基本的、非功能方面包括：</p>
+<ul>
+<li>高效的计算cryptographic hash</li>
+<li>有效的计算差异，如果有节点数据没有更新，传输给它尽可能少的数据</li>
+<li>保证每一次交易产生较少的数据（存储）</li>
+</ul>
+<p>分布式账本底层使用RocksDB，大文件的hash存储在链上，文件本身在链外存储</p>
+<ul>
+<li>(3) 共识机制管理</li>
+</ul>
+<p>共识机制管理为共识算法和其他组件之间定义了通用的接口，它接收交易，然后剩下的事情交给共识算法去做。共识机制管理使得共识算法模块化，可配置化。</p>
+<p><br></p>
+<h6 id="点对点（P2P）协议"><a href="#点对点（P2P）协议" class="headerlink" title="点对点（P2P）协议"></a>点对点（P2P）协议</h6><p>&emsp;&emsp;点对点协议运用的是Google RPC协议（谷歌远程过程调用协议，在超文本传输协议2.0标准下执行），其功能包括双向流、流控制、在单一连接下执行多路复用要求等。最重要的是，它能与现有网络基础设施结合，包括防火墙、代理服务器以及安全保护等。这一组合能够为对等节点采用的信息提供由点对点到多路传送的定义。</p>
+<p><br></p>
 <h6 id="分布式账本及数据存储"><a href="#分布式账本及数据存储" class="headerlink" title="分布式账本及数据存储"></a>分布式账本及数据存储</h6><p>&emsp;&emsp;下图是0.6版本协议中的一张图，不过大体上没有变化，1.0中只是增加了CouchDB（同样的k-v存储，只是能够支持负责的query）</p>
 <div align="center"><br><img src="/2017/04/22/我对hyperledger-fabric-1-0-架构的理解/cunchu.png" width="80%"><br></div> 
 
@@ -668,8 +656,7 @@
 <h6 id="共识管理器-PBFT"><a href="#共识管理器-PBFT" class="headerlink" title="共识管理器(PBFT)"></a>共识管理器(PBFT)</h6><p>&emsp;&emsp;共识管理器是一个抽象概念，它定义了共识算法与其他Hyperledger组件之间的接口。共识管理器接收交易，根据算法来决定如何组织以及何时执行这些交易。交易成功执行后就会在账本上反映变化</p>
 <p>关于PBFT有个简单明了的解释，可以看一下 <a href="https://yeasy.gitbooks.io/blockchain_guide/distribute_system/bft.html" target="_blank" rel="external">区块链指南</a>，这是自行组织的区块链介绍的书，里面有些有关区块结构以及merkle树知识也可以翻一翻，我就不解释了这里。</p>
 <p><br></p>
-<h3 id="Hyperledger-fabric-0-6与1-0"><a href="#Hyperledger-fabric-0-6与1-0" class="headerlink" title="Hyperledger fabric 0.6与1.0"></a><div align="center">Hyperledger fabric 0.6与1.0</div></h3><p>######Hyperledger 0.6版本架构特点</p>
-<p><br></p>
+<h3 id="Hyperledger-fabric-0-6与1-0"><a href="#Hyperledger-fabric-0-6与1-0" class="headerlink" title="Hyperledger fabric 0.6与1.0"></a><div align="center">Hyperledger fabric 0.6与1.0</div></h3><h4 id="Hyperledger-0-6版本架构特点"><a href="#Hyperledger-0-6版本架构特点" class="headerlink" title="Hyperledger 0.6版本架构特点"></a>Hyperledger 0.6版本架构特点</h4><p><br></p>
 <div align="center"><br><img src="/2017/04/22/我对hyperledger-fabric-1-0-架构的理解/0.6.png" width="20%"><br></div> 
 
 
@@ -680,8 +667,7 @@
 <li>①结构简单： 应用-成员管理-Peer的三角形关系，主要业务功能全部集中于Peer节点；</li>
 <li>②架构问题：不能支持私有的transaction以及保密的合约,比如如果有两个个体的交易有些信息不让其他方知道的时候，这个问题在1.0版本中的channel通道概念引进之后得到解决，同时，由于peer节点承担了太多的功能，所以带来扩展性、可维护性、安全性、业务隔离等方面的诸多问题，所以0.6版本在推出后，并没有大规模被行业使用，只是在一些零星的案例中进行业务验证</li>
 </ul>
-<p>#######Hyperledger 1.0版本架构特点</p>
-<p><br></p>
+<h5 id="Hyperledger-1-0版本架构特点"><a href="#Hyperledger-1-0版本架构特点" class="headerlink" title="Hyperledger 1.0版本架构特点"></a>Hyperledger 1.0版本架构特点</h5><p><br></p>
 <div align="center"><br><img src="/2017/04/22/我对hyperledger-fabric-1-0-架构的理解/1.0arc.png" width="50%"><br></div> 
 
 
@@ -711,8 +697,9 @@
 </tr>
 </tbody>
 </table>
-<p>######我所理解的 Hyperledger fabric1.0 架构要点：</p>
-<ol>
+<p><br></p>
+<p><br></p>
+<h4 id="我所理解的-Hyperledger-fabric1-0-架构要点："><a href="#我所理解的-Hyperledger-fabric1-0-架构要点：" class="headerlink" title="我所理解的 Hyperledger fabric1.0 架构要点："></a>我所理解的 Hyperledger fabric1.0 架构要点：</h4><ol>
 <li><p>分拆Peer的功能，将Blockchain的数据维护和共识服务进行分离，共识服务从Peer节点中完全分离出来，独立为Orderer节点提供共识服务</p>
 </li>
 <li><p>State由peer维护，ledger由orderer节点创建，由orderer节点deliver给每一个peer节点，每一个peer节点维护一个ledger的副本。</p>
@@ -726,25 +713,20 @@
 </ol>
 <p>&emsp;&emsp;基于新的架构，实现多通道（channel）的结构，实现了更为灵活的业务适应性（业务隔离、安全性等方面）支持更强的配置功能和策略管理功能，进一步增强系统的灵活性和适应性；</p>
 <p>&emsp;&emsp;Hyperledger fabirc 1.0 版本的在0.6版本基础上，针对安全、保密、部署、维护、实际业务场景需求等方面进行了很多改进，特别是Peer节点的功能分离，给系统架构具备了支持多通道、可插拔的共识的能力，已经接近于工业应用的需求。</p>
-<p>######Hyperledger 1.0 版本关键架构：</p>
-<p><br></p>
+<h4 id="Hyperledger-1-0-版本关键架构："><a href="#Hyperledger-1-0-版本关键架构：" class="headerlink" title="Hyperledger 1.0 版本关键架构："></a>Hyperledger 1.0 版本关键架构：</h4><p><br></p>
 <ul>
-<li><p>######通道</p>
-<p>  Fabric 1.0 的重要特征是支持多channel。</p>
+<li><h5 id="通道"><a href="#通道" class="headerlink" title="通道"></a>通道</h5><p>  Fabric 1.0 的重要特征是支持多channel。</p>
 </li>
 </ul>
-<pre><code>通道是有共识服务（ordering）提供的一种通讯机制，类似于消息系统中的发布-订阅（PUB/SUB）中的topic；基于这种发布-订阅关系，将peer和orderer连接在一起，形成一个个具有保密性的通讯链路（虚拟），实现了业务隔离的要求；通道也与账本（ledger）-状态（worldstate）紧密相关
-
-
-其中对于channel的理解可以类比交换机上的vlanID，通俗的讲就是如果多个peer节点连接到一个orderer节点上，假如此时peerA跟peerB有需要对其他节点不可见的消息通信，他们可以虚拟出一个单独的channel，只允许这两个节点之间的通信，从而提高了保密性。
-</code></pre><p><br></p>
+<p>&emsp;&emsp;通道是有共识服务（ordering）提供的一种通讯机制，类似于消息系统中的发布-订阅（PUB/SUB）中的topic；基于这种发布-订阅关系，将peer和orderer连接在一起，形成一个个具有保密性的通讯链路（虚拟），实现了业务隔离的要求；通道也与账本（ledger）-状态（worldstate）紧密相关</p>
+<p>&emsp;&emsp;其中对于channel的理解可以类比交换机上的vlanID，通俗的讲就是如果多个peer节点连接到一个orderer节点上，假如此时peerA跟peerB有需要对其他节点不可见的消息通信，他们可以虚拟出一个单独的channel，只允许这两个节点之间的通信，从而提高了保密性。</p>
+<p><br></p>
 <div align="center"><br><img src="/2017/04/22/我对hyperledger-fabric-1-0-架构的理解/channel.png" width="20%"><br></div> 
 
 
 
 <p><br></p>
-<pre><code>如上图所示，共识服务与（P1、PN）、（P1、P2、P3）、（P2、P3）组成了三个相互独立的通道，加入到不同通道的Peer节点能够维护各个通道对应的账本和状态；
-</code></pre><p>官方文档上对于通道的说明涉及到四个概念：<code>创建</code>，<code>加入</code>，<code>选举</code>，<code>通信</code></p>
+<p>&emsp;&emsp;如上图所示，共识服务与（P1、PN）、（P1、P2、P3）、（P2、P3）组成了三个相互独立的通道，加入到不同通道的Peer节点能够维护各个通道对应的账本和状态；<br>官方文档上对于通道的说明涉及到四个概念：<code>创建</code>，<code>加入</code>，<code>选举</code>，<code>通信</code></p>
 <ol>
 <li><p><strong>创建</strong></p>
 <p> 当需要创建一个通道的时候，orderer service调用configuration system chaincode，传入anchor peer ** s , member set等参数信息创建一个通道，并生成一个包含这配置信息的创世快，我们也称之为配置块。</p>
@@ -772,8 +754,7 @@
 
 <p><br><br>&emsp;&emsp;在应现实世界中，不同业务场景下的参与方，例如银行、保险公司；物流企业、生产企业等实体结构；我们可以看到channel机制实际上是的Fabric建模实际业务流程的能力大大增强了，大家可以发挥想象力去找到可能的应用领域</p>
 <ul>
-<li><p>#####交易流程</p>
-<p>  新的fabric1.0官方文档中给出下面这张流程图：</p>
+<li><h5 id="交易流程"><a href="#交易流程" class="headerlink" title="交易流程"></a>交易流程</h5><p>  新的fabric1.0官方文档中给出下面这张流程图：</p>
 <p>  <br></p>
 <div align="center"><br><img src="/2017/04/22/我对hyperledger-fabric-1-0-架构的理解/transmision.png" width="80%"><br></div> 
 
@@ -790,18 +771,12 @@
 <li><strong>步骤（1） </strong></li>
 </ul>
 <p>client创建并调用一个transaction，通过给定的<code>chaincodeID</code>，根据其<code>endersement policy</code>中的要求，选择一个endorser节点集合，向这些节点发出<code>PROPOSE消息</code><br>消息格式为：<code>&lt;PROPOSE, tx, [anchor]&gt;</code>, 并计算出<code>tid = HASH(PROPOSE || tx || [anchor])</code>存到内存中以便之后对收到的（3）的消息进行验证核对。<br>其中：<code>tx = &lt;clientID, chaincodeID, txpayload, timestamp, clientSig&gt;</code></p>
-<p><hr><br>    clientID = 用户注册获得的用户ID标识</p>
-<pre><code>chaincodeID = 已经部署且将要执行的链码ID
-
-
-txpayload = 包含交易相关操作信息
-
-
-timestamp = 交易创建时的时间戳
-
-
-clientSig = 用户的签名
-</code></pre><hr>
+<p><hr><br>   clientID = 用户注册获得的用户ID标识</p>
+<p>   chaincodeID = 已经部署且将要执行的链码ID</p>
+<p>   txpayload = 包含交易相关操作信息</p>
+<p>   timestamp = 交易创建时的时间戳</p>
+<p>   clientSig = 用户的签名</p>
+<hr>
 
 <ul>
 <li><p><strong>步骤（2）</strong></p>
@@ -810,65 +785,69 @@ clientSig = 用户的签名
 <li><p>通过endorser peer ID （<code>epID</code>）对<code>clientSig</code>进行verify的过程</p>
 </li>
 <li><p>调用chaincode代码对交易动作进行模拟交易，得出<code>rwset集合</code></p>
-<p>  <br><br>  对于readset和writeset集合说明：</p>
-<p>  Peer节点解析链码访问交易记录的所有键值对，可以读可以写，它还没有更新它的状态。更具体的说：</p>
+<p>  <br><br>对于readset和writeset集合说明：</p>
 </li>
 </ul>
-<pre><code>VerDep是一个元组（ `verDep = (readset, writeset)` ）
-给定请求的节点执行交易前的一个状态s:
-* 对交易读取的每一个键`k`,把`（k,s(k).version）`加入到`readset`中。
-* 对交易修改的每一个键`k`,把`（k,s(k).version）`加入到`writeset`中。
-
-&lt;br&gt;
-同时，将对交易修改的每一个键`k`的新值`v’`,把`（k,v’）`加入到`stateUpdate`中，`v’`也可以是新值相对旧值`s(k).value`的增量。
-</code></pre><p>实现中可以把<code>verDep.writeset</code>和<code>stateUpdate</code>放到一个数据结构中。</p>
+<p>Peer节点解析链码访问交易记录的所有键值对，可以读可以写，它还没有更新它的状态。更具体的说：</p>
+<p>VerDep是一个元组（ <code>verDep = (readset, writeset)</code> ）</p>
+<p>给定请求的节点执行交易前的一个状态s:</p>
+<ul>
+<li>对交易读取的每一个键<code>k</code>,把<code>（k,s(k).version）</code>加入到<code>readset</code>中。</li>
+<li><p>对交易修改的每一个键<code>k</code>,把<code>（k,s(k).version）</code>加入到<code>writeset</code>中。</p>
+<p>  <br><br>同时，将对交易修改的每一个键<code>k</code>的新值<code>v’</code>,把<code>（k,v’）</code>加入到<code>stateUpdate</code>中，<code>v’</code>也可以是新值相对旧值<code>s(k).value</code>的增量。<br>实现中可以把<code>verDep.writeset</code>和<code>stateUpdate</code>放到一个数据结构中。</p>
+</li>
+</ul>
 <p><br></p>
 <ul>
 <li><strong>步骤（3）</strong></li>
 </ul>
 <p>背书节点如果拒绝为其背书，则返回<code>TRANSACTION-INVALID消息</code>给<code>tx.clientID</code>，<br> 消息格式 = <code>&lt;TRANSACTION-INVALID , tid , type &gt;</code></p>
 <p>这里的<code>type</code>有三种：</p>
-<pre><code> 1) 如果背书者获取到的状态更新和tran-proposal.stateUpdates里的不一样，它就对`(TRANSACTION-INVALID, tid, INCORRECT_STATE)`进行签名并发送给请求节点。
-
-2) 如果背书者发现了比tran-proposal.verDeps更新的数据版本，它就对`(TRANSACTION-INVALID, tid, STALE_VERSION)`进行签名并发送给请求节点。
-
-3) 如果背书者因为其他的一些原因（内部的背书策略、交易错误等）不想对交易进 行背书，它就对`(TRANSACTION-INVALID, tid, REJECTED)`进行签名并发送给请求节点。
-</code></pre><p>如果为其背书，则返回<code>TRANSACTION-ENDORSED消息</code>给<code>tx.clientID</code>,<br>消息格式 = <code>&lt;TRANSACTION-ENDORSED, tid, tran-proposal, epSig&gt;</code></p>
-<pre><code>其中tran-proposal = `&lt;epID, tid, chaincodeID, txContentBlob, readset, writeset&gt;`
-(txContenBlob = tx.txpayload, readset和writeset是如果交易结果最后能被写入
-ledger的数据读取与写入集合)
-</code></pre><ul>
+<ul>
+<li><p>1) 如果背书者获取到的状态更新和tran-proposal.stateUpdates里的不一样，它就对<code>(TRANSACTION-INVALID, tid, INCORRECT_STATE)</code>进行签名并发送给请求节点。</p>
+</li>
+<li><p>2) 如果背书者发现了比tran-proposal.verDeps更新的数据版本，它就对<code>(TRANSACTION-INVALID, tid, STALE_VERSION)</code>进行签名并发送给请求节点。</p>
+</li>
+<li><p>3) 如果背书者因为其他的一些原因（内部的背书策略、交易错误等）不想对交易进 行背书，它就对<code>(TRANSACTION-INVALID, tid, REJECTED)</code>进行签名并发送给请求节点。</p>
+</li>
+</ul>
+<p>如果为其背书，则返回<code>TRANSACTION-ENDORSED消息</code>给<code>tx.clientID</code>,<br>消息格式 = <code>&lt;TRANSACTION-ENDORSED, tid, tran-proposal, epSig&gt;</code></p>
+<p>其中tran-proposal = <code>&lt;epID, tid, chaincodeID, txContentBlob, readset, writeset&gt;</code><br>(txContenBlob = tx.txpayload, readset和writeset是如果交易结果最后能被写入<br>ledger的数据读取与写入集合)</p>
+<ul>
 <li><strong>步骤（4）</strong></li>
 </ul>
 <p>client根据收集到的<code>TRANSACTION-INVALID</code>和<code>TRANSACTION_ENDORSED</code>消息，通过<code>endorsement policy</code>判断是否达到要求，如果达不到要求则判定交易操作失败，发送消息给用户决定是否重新提交transaction，如果达到要求，则client对收集到的TRANSACTION-ENDORSE的签名，形成一个<code>endorsement</code>加上<code>trans-proposal</code>,形成一个<code>blob=(endorsement,trans-proposal)</code></p>
 <p>注：我们所说的<code>ESCC</code>（endorser system chaincode）就是发生在该阶段，这里的判断依据是背书策略（endorsement policy）,关于背书策略是在链码部署的过程中设置的<br>例如：</p>
 <p><br></p>
-<pre><code>peer chaincode deploy -C testchainid -n mycc -p http://github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02 -c &apos;{&quot;Args&quot;:[&quot;init&quot;,&quot;a&quot;,&quot;100&quot;,&quot;b&quot;,&quot;200&quot;]}&apos; -P &quot;AND(&apos;Org1.member&apos;, &apos;Org2.member&apos;)&quot;
-</code></pre><p><br><br>执行这条命令将在testchainid这条链上使用背书策略<code>AND(&#39;Org1.member&#39;, &#39;Org2.member&#39;)</code>.部署智能合约mycc。</p>
-<p><br><br><strong>背书策略可以由两个部分组成</strong>（主体<code>principal</code>和阀门<code>theshold gate</code>）</p>
+<blockquote>
+<p>peer chaincode deploy -C testchainid -n mycc -p <a href="http://github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02" target="_blank" rel="external">http://github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02</a> -c ‘{“Args”:[“init”,”a”,”100”,”b”,”200”]}’ -P “AND(‘Org1.member’, ‘Org2.member’)”</p>
+</blockquote>
+<p>执行这条命令将在testchainid这条链上使用背书策略<code>AND(&#39;Org1.member&#39;, &#39;Org2.member&#39;)</code>.部署智能合约mycc。</p>
+<p><strong>背书策略可以由两个部分组成</strong>（主体<code>principal</code>和阀门<code>theshold gate</code>）</p>
 <p><br></p>
 <div align="center"><br><img src="/2017/04/22/我对hyperledger-fabric-1-0-架构的理解/org.png" width="70%"><br></div> 
 
 
 <p>如上图所示，对应的背书策略可以是</p>
 <p><strong>（1）主体：-P指令比如：</strong></p>
-<pre><code>AND(&apos;Org1.member&apos;, &apos;Org2.member&apos;, &apos;Org3.member&apos;) 请求三个背书节点的签名
-
-OR(&apos;Org1.member&apos;, &apos;Org2.member&apos;) 请求两个背书节点中的任意一个的签名
-
-OR(&apos;Org1.member&apos;, AND(&apos;Org2.member&apos;, &apos;Org3.member&apos;)) 请求来自Org1 MSP成员或来自Org2 MSP成员和来自Org3 MSP成员的任意一个签名
-</code></pre><p><strong>（2）阀门：-T指令比如：</strong></p>
-<pre><code>T(2, &apos;1.1&apos;, &apos;1.2&apos;, &apos;1.3&apos;) 请求来自&apos;1.1&apos;、&apos;1.2&apos;、&apos;1.3&apos;的任意2个背书节点的签名
-T(1, &apos;1.1&apos;, T(2, &apos;2.1&apos;, &apos;3.1&apos;)) 请求来自1.1或来自2.1和3.1中的一个签名
-</code></pre><p><br></p>
-<hr>
-
-<p><br><br><em>注</em>：步骤（1） （2） （3）这个阶段是一次或多次，这涉及到<code>transaction pattern</code>概念</p>
+<ul>
+<li>AND(‘Org1.member’, ‘Org2.member’, ‘Org3.member’) 请求三个背书节点的签名</li>
+<li>OR(‘Org1.member’, ‘Org2.member’) 请求两个背书节点中的任意一个的签名</li>
+<li>OR(‘Org1.member’, AND(‘Org2.member’, ‘Org3.member’)) 请求来自Org1 MSP成员或来自Org2 MSP成员和来自Org3 MSP成员的任意一个签名</li>
+</ul>
+<p><strong>（2）阀门：-T指令比如：</strong></p>
+<ul>
+<li>T(2, ‘1.1’, ‘1.2’, ‘1.3’) 请求来自’1.1’、’1.2’、’1.3’的任意2个背书节点的签名</li>
+<li>T(1, ‘1.1’, T(2, ‘2.1’, ‘3.1’)) 请求来自1.1或来自2.1和3.1中的一个签名<br><br><br><em>注</em>：步骤（1） （2） （3）这个阶段是一次或多次，这涉及到<code>transaction pattern</code>概念</li>
+</ul>
 <p>transaction pattern分为两种</p>
-<pre><code>1. 首先client发送&lt;PROPOSE,tx&gt;给一个endorser节点，endorser节点通过putstate(),getstate()接口读写state的version dependencies然后返回一个anchor给client，client收到后把anchor加上形成&lt;PROPOSE,tx,anchor&gt;后再继续发给其他endorser节点
-
-2. client一次性发送&lt;PROPOSE,tx&gt;给所有相关的endorser节点
-</code></pre><p><br></p>
+<ol>
+<li><p>首先client发送<propose,tx>给一个endorser节点，endorser节点通过putstate(),getstate()接口读写state的version dependencies然后返回一个anchor给client，client收到后把anchor加上形成<propose,tx,anchor>后再继续发给其他endorser节点</propose,tx,anchor></propose,tx></p>
+</li>
+<li><p>client一次性发送<propose,tx>给所有相关的endorser节点</propose,tx></p>
+</li>
+</ol>
+<p><br></p>
 <ul>
 <li><strong>步骤（5）</strong></li>
 </ul>
@@ -884,10 +863,10 @@ T(1, &apos;1.1&apos;, T(2, &apos;2.1&apos;, &apos;3.1&apos;)) 请求来自1.1或
 </ul>
 <p>orderer service将对应区块block通过<code>deliver( seqno,prehash,blob )消息</code>同时发往endorser节点和commiter节点</p>
 <p>注：</p>
-<pre><code>1）seqno是一个递增的数值，且seqno相同，则prehash,blob相同
-2）prehash = HASH( seqno || prehash || blob )
-3）第一次的prehash是一个默认值，其后的prehash均为上一个deliver信息的哈希
-</code></pre><p><br></p>
+<p>1）seqno是一个递增的数值，且seqno相同，则prehash,blob相同</p>
+<p>2）prehash = HASH( seqno || prehash || blob )</p>
+<p>3）第一次的prehash是一个默认值，其后的prehash均为上一个deliver信息的哈希</p>
+<p><br></p>
 <ul>
 <li><strong>步骤（8）</strong></li>
 </ul>
@@ -902,28 +881,22 @@ T(1, &apos;1.1&apos;, T(2, &apos;2.1&apos;, &apos;3.1&apos;)) 请求来自1.1或
 <p><br><br>图中blob3是被判断为无效的transaction</p>
 <hr>
 
-<ol>
-<li>endorser和commiter节点会对收到并根据背书策略被验证有效性后的block信息进行签名：<code>peerSig = Signatrue(CHECKPOINT,blocknohash,blockno,statehash)</code><br>(其中，statehash就是merkle树的根hash)</li>
-</ol>
-<ol>
-<li>然后每个节点把peerSig加上后广播给其他endorser节点<br><code>&lt;CHECKPOINT,blocknohash,blockno,statehash,peerSig&gt;</code></li>
-</ol>
-<ol>
-<li>每一个节点收到一定数量的签名后维护最后一次有效相关信息：</li>
-</ol>
-<pre><code>`lastestValidCheckpoint` = &lt;blocknohasn,blockno&gt;
-
-
-`lastestValidCecckpointProof` = sets of peerSig
-
-
-`lastestValidCheckpointedState` = statehash
-
-
-`blockno` = seqno
-</code></pre><ol>
-<li>将有效的block接到本地维护的ledger中，这里提两个概念（一个是<code>peerLedger</code>,一个是<code>validatedLedger</code>）他们的不同点在于，前者指记录着有效交易，后者有效无效均有，所以说,最后通过checkpoint协议，是的每一个节点都维护一个有效交易的ledger.</li>
-</ol>
+<ul>
+<li>1） endorser和commiter节点会对收到并根据背书策略被验证有效性后的block信息进行签名：<code>peerSig = Signatrue(CHECKPOINT,blocknohash,blockno,statehash)</code><br>(其中，statehash就是merkle树的根hash)</li>
+</ul>
+<ul>
+<li>2） 然后每个节点把peerSig加上后广播给其他endorser节点<br><code>&lt;CHECKPOINT,blocknohash,blockno,statehash,peerSig&gt;</code></li>
+</ul>
+<ul>
+<li>3） 每一个节点收到一定数量的签名后维护最后一次有效相关信息：</li>
+</ul>
+<p><code>lastestValidCheckpoint</code> = <blocknohasn,blockno></blocknohasn,blockno></p>
+<p><code>lastestValidCecckpointProof</code> = sets of peerSig</p>
+<p><code>lastestValidCheckpointedState</code> = statehash</p>
+<p><code>blockno</code> = seqno</p>
+<ul>
+<li>4） 将有效的block接到本地维护的ledger中，这里提两个概念（一个是<code>peerLedger</code>,一个是<code>validatedLedger</code>）他们的不同点在于，前者指记录着有效交易，后者有效无效均有，所以说,最后通过checkpoint协议，是的每一个节点都维护一个有效交易的ledger.</li>
+</ul>
 <hr>
 
 
@@ -932,55 +905,54 @@ T(1, &apos;1.1&apos;, T(2, &apos;2.1&apos;, &apos;3.1&apos;)) 请求来自1.1或
 </ul>
 <p>最后client会收到交易操作有效无效的消息通知（具体是通过<code>SDK事件</code>机制通知）。到此整个流程就结束了。</p>
 <p><br><br><br><br><br><br><br></p>
-<p>####<div align="center">最后的最后，自己的思考总结</div></p>
-<p><br></p>
-<h6 id="背书节点概览图"><a href="#背书节点概览图" class="headerlink" title="背书节点概览图"></a>背书节点概览图</h6><p><br></p>
+<h4 id="最后的最后，自己的思考总结"><a href="#最后的最后，自己的思考总结" class="headerlink" title="最后的最后，自己的思考总结"></a><div align="center">最后的最后，自己的思考总结</div></h4><p><br></p>
+<h5 id="背书节点概览图"><a href="#背书节点概览图" class="headerlink" title="背书节点概览图"></a>背书节点概览图</h5><p><br></p>
 <div align="center"><br><img src="/2017/04/22/我对hyperledger-fabric-1-0-架构的理解/endorser.png" width="70%"><br></div> 
 
 <p><br></p>
-<p>######思考与总结</p>
+<h5 id="思考与总结"><a href="#思考与总结" class="headerlink" title="思考与总结"></a>思考与总结</h5><p><br></p>
+<ul>
+<li>(1) 背书节点的个数是由应用场景决定的，比如一个关于各大银行的应用，每一个银行就是一个背书节点，在特定的通道中，会选举一个leading endorser peer,在这里可以是央行。如果是一个各大商家的应用场景，则每一个商家就是一个背书节点，相应的leading背书节点可以有相应的算法选择。</li>
+</ul>
+<ul>
+<li><p>(2)    各个背书节点之间可能有不同的交易场合，所以根据需求也可能是不同的chaincode规则，所以每一个背书节点可能有多个chaincode以及每一个chaincodeID对应的背书策略。</p>
+</li>
+<li><p>(3)    相应的，一个背书节点，可能有不同的通道，维护这每个通道的ledger,对于ledger的数据存储，根据实际应用进行定义，比如定义相应的数据结构体比如一个票据ticket结构体、一个资金流转circulation结构体</p>
+</li>
+<li><p>(4)    所以一个应用的大体的组成应该有如下结构：<br>一个membership service + 一个orderer service + 多个endorser peers</p>
+</li>
+<li><p>(5)    关于代码：如果同在一个通道且执行相同的规则，则配置的是相同chaincodeID的chaincode代码，如果有执行的是不同的规则，则为不同的chaincodeID的chaincode代码，通道数与chaincode数不是一一对应的，一个通道下的背书节点可以有多个chaincode,对应不同的chaincodeID</p>
+</li>
+<li><p>(6)    orderer service的话官方提供了solo（开发测试用），kafka, bft，这些是可以通过配置文件配置的，默认是solo,当然如果有能力开发自己的一套共识算法，则可以自定义共识插件。</p>
+</li>
+<li><p>(7)    一个具体的交易过程需要多少个背书节点背书？这个是根据部署chaincode的背书策略定义的。而client节点不需要连接所有的背书节点，只需要根据背书策略尽可能多的连接到背书节点上。</p>
+</li>
+</ul>
 <p><br></p>
-<pre><code>(1) 背书节点的个数是由应用场景决定的，比如一个关于各大银行的应用，每一个银行就是一个背书节点，在特定的通道中，会选举一个leading endorser peer,在这里可以是央行。如果是一个各大商家的应用场景，则每一个商家就是一个背书节点，相应的leading背书节点可以有相应的算法选择。
-
-(2)    各个背书节点之间可能有不同的交易场合，所以根据需求也可能是不同的chaincode规则，所以每一个背书节点可能有多个chaincode以及每一个chaincodeID对应的背书策略。
-
-(3)    相应的，一个背书节点，可能有不同的通道，维护这每个通道的ledger,对于ledger的数据存储，根据实际应用进行定义，比如定义相应的数据结构体比如一个票据ticket结构体、一个资金流转circulation结构体
-
-(4)    所以一个应用的大体的组成应该有如下结构：
-    一个membership service + 一个orderer service + 多个endorser peers
-
-(5)    关于代码：如果同在一个通道且执行相同的规则，则配置的是相同chaincodeID的chaincode代码，如果有执行的是不同的规则，则为不同的chaincodeID的chaincode代码，通道数与chaincode数不是一一对应的，一个通道下的背书节点可以有多个chaincode,对应不同的chaincodeID
-
-(6)    orderer service的话官方提供了solo（开发测试用），kafka, bft，这些是可以通过配置文件配置的，默认是solo,当然如果有能力开发自己的一套共识算法，则可以自定义共识插件。
-
-(7)    一个具体的交易过程需要多少个背书节点背书？这个是根据部署chaincode的背书策略定义的。而client节点不需要连接所有的背书节点，只需要根据背书策略尽可能多的连接到背书节点上。
-</code></pre><p><br></p>
 <p><strong>最后举一个例子说明一下在开发过程中的配置,设想一个四个背书节点的solo共识服务的节点网络:</strong></p>
-<pre><code>A）在一台电脑上需要安装一个虚拟机平台，然后在虚拟机平台上创建四个虚拟机（比如ubuntu虚拟机）
-
-
-B）设主机ip地址为192.168.1.138
-        虚拟机peer1：192.168.1.201
-        虚拟机peer2：192.168.1.202
-        虚拟机peer3：192.168.1.203
-        虚拟机peer4：192.168.1.204
-
-
-C）member service运行在主机上，用docker pull 命令从docker hub上pull最新的membersrvc镜像（docker pull hyperledger/fabric-membersrvc:lastest）并本地用docker compose up运行
-
-
-D）在相应的虚拟机中庸docker pull 命令从docker hub上pull最新的peer镜像（docker pull hyperledger/fabric-peer:lastest）
-
-
-E）在相应的虚拟机中进行environment配置并设定ip及端口之间的指向，具体查看开发文档
-
-
-F）编译orderer和peer的镜像（make peer-docker orderer-docker）
-
-说明：具体的当相应的背书节点上的chaincode执行是，则会生成对应的镜像（默认的镜像命名方式为：dev+(背书节点名)+（chaincodeID）
-
-设想一个场景就是peer1,peer2,peer4同在一个通道，而peer3不在此通道上，此时执行的交易的chaincode是peer1,peer2,peer4上的chaincode_101,则执行交易时执行docker ps会看到三个新生成的镜像，分别是dev-peer1-chaincode_101, dev-peer2-chaincode_101, dev-peer3-chaincode_101。
-</code></pre><p><br><br><strong>写在最后，这篇文章是基于自己在学习fabric时候的一些理解吧，当然里面如果有不准确的，欢迎交流一起学习</strong></p>
+<ul>
+<li>A）在一台电脑上需要安装一个虚拟机平台，然后在虚拟机平台上创建四个虚拟机（比如ubuntu虚拟机）</li>
+</ul>
+<ul>
+<li>B）设主机ip地址为192.168.1.138<br>   虚拟机peer1：192.168.1.201<br>   虚拟机peer2：192.168.1.202<br>   虚拟机peer3：192.168.1.203<br>   虚拟机peer4：192.168.1.204</li>
+</ul>
+<ul>
+<li>C）member service运行在主机上，用docker pull 命令从docker hub上pull最新的membersrvc镜像（docker pull hyperledger/fabric-membersrvc:lastest）并本地用docker compose up运行</li>
+</ul>
+<ul>
+<li>D）在相应的虚拟机中庸docker pull 命令从docker hub上pull最新的peer镜像（docker pull hyperledger/fabric-peer:lastest）</li>
+</ul>
+<ul>
+<li><p>E）在相应的虚拟机中进行environment配置并设定ip及端口之间的指向，具体查看开发文档</p>
+</li>
+<li><p>F）编译orderer和peer的镜像（make peer-docker orderer-docker）</p>
+</li>
+<li><p>说明：具体的当相应的背书节点上的chaincode执行是，则会生成对应的镜像（默认的镜像命名方式为：dev+(背书节点名)+（chaincodeID）</p>
+</li>
+<li><p>设想一个场景就是peer1,peer2,peer4同在一个通道，而peer3不在此通道上，此时执行的交易的chaincode是peer1,peer2,peer4上的chaincode_101,则执行交易时执行docker ps会看到三个新生成的镜像，分别是dev-peer1-chaincode_101, dev-peer2-chaincode_101, dev-peer3-chaincode_101。</p>
+</li>
+</ul>
+<p><br><br><strong>写在最后，这篇文章是基于自己在学习fabric时候的一些理解吧，当然里面如果有不准确的，欢迎交流一起学习</strong></p>
 
           
         
